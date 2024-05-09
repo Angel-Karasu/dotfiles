@@ -39,4 +39,4 @@
 *.color15:      #E4E4E4
 
 
-#include ".config/urxvt.conf"
+#include "urxvt.conf"

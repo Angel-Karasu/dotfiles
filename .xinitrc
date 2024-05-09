@@ -1,5 +1,4 @@
 #!/bin/sh
 
-xrdb -merge $HOME/.Xresources
+xrdb -merge $HOME/.config/Xresources
 exec i3
-brightnessctl s $(brightnessctl g)
