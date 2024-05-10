@@ -10,7 +10,7 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias make='make -j 8'
 
-alias clean='rm -rf ~/.local/share/Trash/*; rm ~/.bash_history-*'
+alias clean='rm -rf ~/.local/share/Trash/*; rm ~/.bash_history*'
 
 clear
 fastfetch
