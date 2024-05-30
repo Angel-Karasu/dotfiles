@@ -12,4 +12,5 @@ else
   xsetroot -solid `xrdb -get background`
 fi
 
+brightnessctl s `brightnessctl g`
 polybar -q -c ~/.config/polybar/bar.conf bottom &
