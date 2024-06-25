@@ -1,0 +1,25 @@
+* {
+  --black: #12121295;
+  --black-alt: #58585895;
+
+  --blue: #203856;
+  --blue-alt: #62aedc;
+
+  --cyan: #005F87;
+  --cyan-alt: #0087AF;
+
+  --green: #3da542;
+  --green-alt: #a6d378;
+
+  --magenta: #800080;
+  --magenta-alt: #C25ABD;
+
+  --red: #7a3842;
+  --red-alt: #cb6362;
+
+  --white: #b9b9b9;
+  --white-alt: #E4E4E4;
+
+  --yellow: #e28c00;
+  --yellow-alt: #eccd00;
+}

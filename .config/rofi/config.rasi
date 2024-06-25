@@ -1,1 +1,28 @@
+configuration {
+  modes: [ drun, filebrowser, window ];
+}
+
 @theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@import "~/.config/rofi/colors.css"
+
+* {
+  background:                  @--black;
+  alternate-normal-background: @--black-alt;
+  selected-normal-background:  @--cyan;
+  active-background:           @--magenta;
+  alternate-active-background: @--magenta;
+  selected-active-background:  @--green;
+  urgent-background:           @--red-alt;
+  alternate-urgent-background: @--yellow;
+  selected-urgent-background:  @--red;
+  foreground:                  @--white;
+  selected-normal-foreground:  @--white-alt;
+  active-foreground:           @--white-alt;
+  selected-active-foreground:  @--white-alt;
+  urgent-foreground:           @--white-alt;
+  selected-urgent-foreground:  @--white-alt;
+  border-color:                @--blue;
+  separatorcolor:              @--blue;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
