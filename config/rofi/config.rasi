@@ -10,7 +10,7 @@ configuration {
   alternate-normal-background: @--black-alt;
   selected-normal-background:  @--cyan;
   active-background:           @--green;
-  alternate-active-background: @--green-alt;
+  alternate-active-background: @--green;
   selected-active-background:  @--magenta;
   urgent-background:           @--red-alt;
   alternate-urgent-background: @--yellow;
