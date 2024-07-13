@@ -1,5 +1,6 @@
 #!/bin/sh
 
+xrdb -merge $HOME/.config/Xresources
 numlockx on
 
 killall picom polybar

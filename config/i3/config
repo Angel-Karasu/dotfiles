@@ -26,6 +26,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+exec_always ~/.config/autostart/autostart.sh
+
 # Colors
 set_from_resource $background background
 set_from_resource $foreground foreground
@@ -39,14 +41,12 @@ client.unfocused        $background     $background     $foreground
 client.urgent           $urgent         $urgent    	    $background
 client.background       $background
 
-for_window [floating] sticky enable
+for_window [instance="Toolkit"] sticky enable
 for_window [class="pavucontrol"] floating enable, resize set 660 450
 for_window [class="Audacious"] floating enable, resize set 1100 750
 
 gaps inner 6
 gaps bottom -2
 default_border pixel 1
-
-exec_always ~/.config/autostart/autostart.sh
 
 include ~/.config/i3/hotkeys.conf
