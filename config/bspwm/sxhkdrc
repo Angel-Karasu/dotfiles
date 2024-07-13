@@ -1,0 +1,71 @@
+# Use brightnessctl to adjust brightness
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+	brightnessctl s {+5%,5%-}
+
+# Use pactl to adjust volume in PulseAudio
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
+{XF86AudioMute,XF86AudioMicMute}
+	pactl set-sink-mute @{DEFAULT_SINK,DEFAULT_SOURCE}@ toggle
+
+# Use playerctl to adjust control player
+{XF86AudioPlay,XF86AudioPrev,XF86AudioNext}
+	playerctl {play-pause,previous,next}
+
+# start a terminal
+super + Return
+	urxvt
+
+# Rofi commands
+super + {d,e,Tab}
+	rofi -show {drun,filebrowser,window} -show-icons
+super + w
+	rofi-connman -show-icons
+
+# Shortcut to launch audacious
+super + XF86AudioPlay
+	audacious
+
+# {quit,kill} focused window
+super + shift + {q,k}
+	bspc node -{c,k}
+
+# {change,move} focus
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# move a floating window
+super + alt + {Left,Down,Up,Right}
+	bspc node -v {-10 0,0 10,0 -10,10 0}
+
+# expand a window by moving one of its side outward
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + shift + {Left,Down,Up,Right}
+	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
+
+# switch container layout (toggle split, stacked)
+super + m
+	bspc desktop -l next
+
+# {tiled,pseudo_tiled,floating,fullscreen} mode for the focused container
+super + {t,shift + t,space,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# focus the {parent,child} container
+super + {p,c}
+	bspc node -f @{parent,first}
+
+# {switch,move focused container} to workspace, for US keyboard: {1-9,0}
+super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+	bspc {desktop -f,node -d} {1-9,10}
+
+# Alt tab switch workspace
+alt + {shift + ,_}Tab
+	bspc desktop -f {prev,next}
+
+# logout/restart bspwm
+super + shift + {l,r}
+	bspc {quit,wm -r}
