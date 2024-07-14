@@ -1,3 +1,7 @@
+# reload sxhkd configuration files
+super + Escape
+	pkill -USR1 -x sxhkd
+
 # Use brightnessctl to adjust brightness
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
 	brightnessctl s {+5%,5%-}
@@ -8,21 +12,21 @@
 {XF86AudioMute,XF86AudioMicMute}
 	pactl set-sink-mute @{DEFAULT_SINK,DEFAULT_SOURCE}@ toggle
 
-# Use playerctl to adjust control player
+# Use playerctl to control player
 {XF86AudioPlay,XF86AudioPrev,XF86AudioNext}
 	playerctl {play-pause,previous,next}
-
-# start a terminal
-super + Return
-	urxvt
 
 # Rofi commands
 super + {d,e,Tab}
 	rofi -show {drun,filebrowser,window} -show-icons
 super + w
-	rofi-connman -show-icons
+	rofi-connman
 
-# Shortcut to launch audacious
+# start a terminal
+super + Return
+	urxvt
+
+# start audacious
 super + XF86AudioPlay
 	audacious
 

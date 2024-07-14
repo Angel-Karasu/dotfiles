@@ -4,6 +4,9 @@ bspc monitor -d {1..10}
 
 . ~/.config/autostart/autostart.sh
 
+pkill sxhkd
+sxhkd -m 1 -c ~/.config/bspwm/sxhkdrc &
+
 bspc config focused_border_color $(xrdb -get color4)
 bspc config normal_border_color $(xrdb -get background)
 
@@ -13,5 +16,3 @@ bspc config window_gap 10
 bspc rule -a *:Toolkit state=floating sticky=true
 bspc rule -a pavucontrol state=floating rectangle=640x450+640+315
 bspc rule -a Audacious state=floating rectangle=1100x750+410+165
-pkill sxhkd
-sxhkd -c ~/.config/bspwm/sxhkdrc &
